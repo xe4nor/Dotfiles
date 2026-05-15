@@ -1,0 +1,29 @@
+# 1. Start-Zeile (Bleibt Himmelblau, weil es der Titel ist)
+regexp=^Starting Nmap.*
+colours=bold bright_blue
+-
+
+# 2. Die PORT-ZEILE (Der Allrounder)
+# Gruppe 0: Ganze Zeile (Standard)
+# Gruppe 1: Port (Lila)
+# Gruppe 2: State (Gelb)
+# Gruppe 3: Service (Himmelblau)
+# Gruppe 4: Version (Grün, dezent ohne bold)
+regexp=^(\d+\/\w+)\s+(open|closed|filtered)\s+(\S+)\s*(.*)$
+colours=default,bold magenta,bold yellow,bold bright_blue,bold bright_green
+-
+
+# 3. Die ÜBERSCHRIFTEN (Passend dazu)
+# Gruppe 0: Ganze Zeile (Standard)
+# Gruppe 1: PORT (Lila)
+# Gruppe 2: STATE (Gelb)
+# Gruppe 3: SERVICE (Himmelblau)
+# Gruppe 4: VERSION (Grün, dezent ohne bold)
+regexp=^(PORT)\s+(STATE)\s+(SERVICE)\s*(VERSION)?
+colours=default,bold magenta,bold yellow,bold bright_blue,bold bright_green
+-
+
+# 4. Der TRACEROUTE Header (Dezent blau)
+regexp=^(TRACEROUTE|Service Info:).*
+colours=bold bright_blue
+-
