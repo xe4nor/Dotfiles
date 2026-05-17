@@ -1,0 +1,23 @@
+# 1. Das Logo, die Version und die Trennlinie 
+regexp=.*(/'___| \__/ | ,__| \_/|v2\.[0-9]+\.[0-9]+|-{10,}).*
+colours=bold bright_blue
+-
+# 2a. Ergebnisse in Bright Blue und bold (Normaler Fall)
+regexp=^[a-zA-Z0-9_.-]+(?=\s+\[Status:)
+colours=bold bright_blue
+-
+# 2b. Ergebnisse (Der Fix für das "2K" Problem!)
+regexp=(?<=2K)[a-zA-Z0-9_.-]+(?=\s+\[Status:)
+colours=bold bright_blue
+-
+# 3. Client- und Server-Errors (4xx und 5xx) in Rot und bold
+regexp=Status:\s*(400|401|403|404|405|429|500|502|503|504)
+colours=bold bright_red
+-
+# 4. Status Codes 301, 302, 303, 307, 308 in Gelb und bold
+regexp=Status:\s*(301|302|303|307|308)
+colours=bold bright_yellow
+-
+# 5. Status Codes 200, 201, 204 in Grün und bold
+regexp=Status:\s*(200|201|204)
+colours=bold bright_green
